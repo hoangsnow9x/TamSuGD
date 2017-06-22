@@ -1,0 +1,21 @@
+doctype
+html(ng-app="myApp")
+	head
+		title= title
+		link(rel="stylesheet", href="/css/admin.css")
+		
+	body(ng-controller="myController")
+		include ../layout/header.pug
+		div.main
+			div.title Danh sách tin tức
+			table
+				tr
+					td Ảnh
+					td Tiêu đề tin
+					td Danh mục tin
+					td Tóm tắt
+					td Ngày tạo
+					td Ngày sửa
+					td(colspan="2") Action
+		script(src="/libs/angular/angular.min.js")
+		//- script(src="../../modules/admin.js")

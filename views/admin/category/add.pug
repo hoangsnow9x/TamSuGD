@@ -1,0 +1,34 @@
+doctype
+html(ng-app="myApp")
+	head
+		title= title
+		link(rel="stylesheet", href="/css/admin.css")
+		
+	body(ng-controller="myController")
+		include ../layout/header.pug
+		div.main
+			div.title Thêm  danh mục
+			form(name="myform")
+				p
+					span Tiêu đề
+					input(type="text", placeholder="Tên danh mục", ng-model="cate.title", required)
+				input(type="submit",value="Upload" ng-click="myform.$valid && btnUploadCate()")
+			
+			div.title List danh mục
+			table
+				tr
+					td ID
+					td Tên danh mục
+					td Ngày tạo
+					td(colspan="2") Action
+				tr(ng-repeat='i in Category')
+					td {{i._id}}
+					td {{i.title}}
+					td {{i.created}}
+					td 
+						button(ng-click="editCategory(i._id)") Sửa
+					td 
+						button(ng-click="delCategory(i._id)") Xóa
+			
+		script(src="/libs/angular/angular.min.js")
+		script(src="/js/admin.js")

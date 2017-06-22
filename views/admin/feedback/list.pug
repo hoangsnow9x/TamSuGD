@@ -1,0 +1,18 @@
+doctype
+html(ng-app="myApp")
+	head
+		title= title
+		link(rel="stylesheet", href="/css/admin.css")
+		
+	body(ng-controller="myController")
+		include ../layout/header.pug
+		div.main
+			div.title Quản lý phản hồi
+			table
+				tr
+					td Người gửi
+					td Nội dung
+					td Email
+					td Ngày gửi
+		script(src="/libs/angular/angular.min.js")
+		//- script(src="../../modules/admin.js")

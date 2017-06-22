@@ -1,0 +1,26 @@
+doctype
+html(ng-app="myApp")
+	head
+		title= title
+		link(rel="stylesheet", href="/css/admin.css")
+		
+	body(ng-controller="myController")
+		include ../layout/header.pug
+		div.main
+			div.title List danh mục
+			table
+				tr
+					td Tên danh mục
+					td Mã danh mục
+					td Ngày tạo
+					td(colspan="2") Action
+				tr(ng-repeat='i in Category')
+					td {{i.title}}
+					td {{i.code}}
+					td {{i.timestamp}}
+					td 
+						button(ng-click="editCategory(i._id)") Sửa
+					td 
+						button(ng-click="delCategory(i._id)") Xóa
+		script(src="/libs/angular/angular.min.js")
+		script(src="/js/admin.js")
